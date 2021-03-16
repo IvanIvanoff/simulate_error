@@ -1,7 +1,10 @@
 defprotocol SimulateError.SomeProtocol do
-  def id(x)
+  def fun(x, user)
 end
 
 defimpl SimulateError.SomeProtocol, for: Any do
-  def id(x), do: x
+  @spec fun(any(), %SimulateError.User{}) :: any()
+  def fun(x, _user) do
+    x
+  end
 end
