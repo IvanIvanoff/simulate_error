@@ -3,6 +3,10 @@ defmodule SimulateError.User do
 
   import SimulateError.Uesr.Event, only: [emit_event: 1]
 
+  @type t :: %__MODULE__{
+          age: integer()
+        }
+
   schema "users" do
     field(:age, :integer)
   end
